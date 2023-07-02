@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  get '/price', to: 'prices#price'
+  get '/prices', to: 'prices#prices'
+  get '/price_all', to: 'prices#price_all'
 end

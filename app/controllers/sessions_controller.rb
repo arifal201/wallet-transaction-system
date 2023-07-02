@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       auth ||= AuthService.new
       token = auth.encrypt_token(@user.id)
       render :json => {
-        token: token,
+        data: @user.selected_row.merge({token: token}),
         message: 'login success'
       }, status: 200
     else
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     else
       render :json => {
         errors: 'user not found'
-      }, status: 400
+      }, status: 404
     end
   end
 end

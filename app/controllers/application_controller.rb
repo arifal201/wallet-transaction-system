@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
 
   before_action :logged_in
+  include Response
 
   def logged_in
     if request.headers['Authorization'].present?

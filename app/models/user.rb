@@ -7,6 +7,13 @@ class User < ApplicationRecord
 
   before_save :save_token
 
+  def selected_row
+    {
+      username: self.username,
+      email: self.email
+    }
+  end
+
   private
   def save_token
     self.token = 'rahasia'
