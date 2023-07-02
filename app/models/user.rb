@@ -4,4 +4,11 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
 
   has_secure_password
+
+  before_save :save_token
+
+  private
+  def save_token
+    self.token = 'rahasia'
+  end
 end

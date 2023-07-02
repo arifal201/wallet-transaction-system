@@ -3,8 +3,15 @@ class ApplicationController < ActionController::API
   before_action :logged_in
 
   def logged_in
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
+    if request.headers['Authorization'].present?
+      auth = AuthService.new
+      if auth.decrypt_token_and_verify(request.headers['Authorization'])
+        @current_user = auth.decrypt_token_and_verify(request.headers['Authorization'])
+      else
+        render :json => {
+          errors: 'unauthorized'
+        },status: 401
+      end
     else
       render :json => {
         errors: 'unauthorized'
