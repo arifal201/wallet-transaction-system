@@ -21,4 +21,11 @@ module Response
       errors: 'sorry something wrong'
     }, status: 400
   end
+
+  def response_success(data, message)
+    render json: {
+      data: data,
+      message: message
+    }, status: 200
+  end
 end

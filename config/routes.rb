@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   get '/price', to: 'prices#price'
   get '/prices', to: 'prices#prices'
   get '/price_all', to: 'prices#price_all'
+  get '/autocomplete/price', to: 'prices#autocomplete_price'
+
+  patch '/topup', to: 'wallets#wallet_topup'
+  get '/wallet/:id', to: 'wallets#show'
+
+  post '/transactions/create', to: 'transactions#create'
 end
