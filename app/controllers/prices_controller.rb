@@ -41,7 +41,7 @@ class PricesController < ApplicationController
   end
 
   def set_price_all
-    @price_all = JSON.parse(Price.new.get_all)
+    @price_all = JSON.parse(Price.new.get_price_all)
   rescue StandardError
     response_error
   end

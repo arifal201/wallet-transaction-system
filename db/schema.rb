@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_095140) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_191956) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,17 +20,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_095140) do
     t.decimal "amount", null: false
     t.string "symbol"
     t.string "identifier", null: false
-    t.decimal "open", precision: 19, scale: 16
-    t.decimal "day_high", precision: 19, scale: 16
-    t.decimal "day_low", precision: 19, scale: 16
-    t.decimal "last_price", precision: 19, scale: 16
-    t.decimal "previous_close", precision: 19, scale: 16
-    t.decimal "change", precision: 19, scale: 16
-    t.decimal "p_cahnge", precision: 19, scale: 16
-    t.decimal "year_high", precision: 19, scale: 16
-    t.decimal "year_low", precision: 19, scale: 16
-    t.decimal "total_traded_volume", precision: 19, scale: 16
-    t.decimal "total_traded_value", precision: 19, scale: 16
+    t.decimal "open"
+    t.decimal "day_high"
+    t.decimal "day_low"
+    t.decimal "last_price"
+    t.decimal "previous_close"
+    t.decimal "change"
+    t.decimal "p_change"
+    t.decimal "year_high"
+    t.decimal "year_low"
+    t.decimal "total_traded_volume"
+    t.decimal "total_traded_value"
     t.string "last_update_time"
     t.decimal "per_change_365d"
     t.decimal "per_change_30d"
